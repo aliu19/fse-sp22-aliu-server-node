@@ -2,6 +2,7 @@ import express, {Request, Response} from 'express';
 import UserController from "./controllers/UserController";
 import TuitControlleri from "./controllers/TuitController";
 import mongoose from "mongoose";
+import LikeController from "./controllers/LikeController";
 
 // connect to the database TODO
 // const DB_USERNAME = process.env.DB_USERNAME;
@@ -21,6 +22,7 @@ app.get('/add/:a/:b', (req: Request, res: Response) =>
 
 const userController = UserController.getInstance(app);
 const tuitController = TuitControlleri.getInstance(app);
+const likesController = LikeController.getInstance(app);
 
 const PORT = 4000;
 app.listen(process.env.PORT || PORT);
