@@ -22,6 +22,7 @@ import LikeController from "./controllers/LikeController";
 import FollowController from "./controllers/FollowController";
 import BookmarkController from "./controllers/BookmarkController";
 import MessageController from "./controllers/MessageController";
+var cors = require('cors')
 
 // connect to the database TODO
 // const DB_USERNAME = process.env.DB_USERNAME;
@@ -32,12 +33,7 @@ mongoose.connect(connectionString);
 // create RESTful Web service API
 const app = express();
 app.use(express.json());
-
-app.get('/hello', (req: Request, res: Response) =>
-    res.send('Hello World!'));
-
-app.get('/add/:a/:b', (req: Request, res: Response) =>
-    res.send(req.params.a + req.params.b));
+app.use(cors());
 
 const userController = UserController.getInstance(app);
 const tuitController = TuitControlleri.getInstance(app);
