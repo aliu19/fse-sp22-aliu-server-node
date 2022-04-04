@@ -10,6 +10,8 @@
  * Connects to a remote MongoDB instance hosted on the Atlas cloud database
  * service
  */
+import DislikeController from "./controllers/DislikeController";
+
 require('dotenv').config();
 import express, {Request, Response} from 'express';
 import CourseController from "./controllers/CourseController";
@@ -68,6 +70,7 @@ const courseController = new CourseController(app);
 const userController = UserController.getInstance(app);
 const tuitController = TuitController.getInstance(app);
 const likesController = LikeController.getInstance(app);
+const dislikedController = DislikeController.getInstance(app);
 SessionController(app);
 AuthenticationController(app);
 GroupController(app);

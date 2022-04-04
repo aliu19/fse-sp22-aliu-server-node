@@ -31,7 +31,7 @@ export default class DislikeController implements DislikeControllerI {
    * Creates singleton controller instance
    * @param {Express} app Express instance to declare the RESTful Web service
    * API
-   * @return TuitController
+   * @return DislikeController
    */
   public static getInstance = (app: Express): DislikeController => {
     if(DislikeController.dislikeController === null) {
