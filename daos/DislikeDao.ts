@@ -34,4 +34,10 @@ export default class DislikeDao implements DislikeDaoI {
 
   userDislikesTuit = async (uid: string, tid: string): Promise<any> =>
       DislikeModel.create({tuit: tid, dislikedBy: uid});
+
+  findUserDislikesTuit = async (uid: string, tid: string): Promise<any> =>
+      DislikeModel.findOne({tuit: tid, likedBy: uid});
+
+  countHowManyDislikedTuit = async (tid: string): Promise<any> =>
+      DislikeModel.count({tuit: tid});
 }
